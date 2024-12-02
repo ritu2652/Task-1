@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Light teal background */
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #b2dfdb; /* Teal border */
+    border-radius: 8px;
+    background-color: #ffffff; /* White background for the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #00796b; /* Darker teal */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #004d40; /* Dark teal */
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b2dfdb; /* Teal border */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.gender-options,
+.state-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.form-group button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #ff7043; /* Coral */
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group button:hover {
+    background-color: #ff5722; /* Darker coral */
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Student Registration Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="gender-options">
+                    <label><input type="radio" id="male" name="gender" value="male"> Male</label>
+                    <label><input type="radio" id="female" name="gender" value="female"> Female</label>
+                    <label><input type="radio" id="other" name="gender" value="other"> Other</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label>State:</label>
+                <div class="state-options">
+                    <label><input type="checkbox" id="haryana" name="state" value="haryana"> Haryana</label>
+                    <label><input type="checkbox" id="Punjab" name="state" value="punjab"> Punjab</label>
+                    <label><input type="checkbox" id="rajasthan" name="state" value="state3"> Rajasthan</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="program">Program of Interest:</label>
+                <select id="program" name="program" required>
+                    <option value="">Select a program</option>
+                    <option value="program1">Frontend</option>
+                    <option value="program2">Sitecore</option>
+                    <option value="program3">Testing</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone No:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

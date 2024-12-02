@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Information Form</title>
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #e0f7fa; /* Light Cyan */
+        }
+
+        /* Form Container */
+        form {
+            background-color: #ffffff; /* White */
+            border: 1px solid #b2ebf2; /* Light Cyan Border */
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Labels */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #00796b; /* Teal */
+        }
+
+        .required::after {
+            content: "*";
+            color: #d32f2f; /* Red */
+            margin-left: 5px;
+        }
+
+        /* Inputs and Selects */
+        input[type="text"], select {
+            width: 100%;
+            border: 1px solid #80deea; /* Light Cyan */
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #f1f8e9; /* Light Green */
+        }
+
+        input[type="text"]:focus, select:focus {
+            border-color: #004d40; /* Darker Teal */
+            outline: none;
+        }
+
+        /* Radio and Checkbox Groups */
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .radio-group label, .checkbox-group label {
+            margin-bottom: 6px;
+            font-weight: normal;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            background-color: #00796b; /* Teal */
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #004d40; /* Darker Teal */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+
+            .submit-button {
+                width: 100%;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Bank Information Form</h1>
+    <form action="/submit-bank-details" method="post">
+        <!-- Bank Information -->
+        <div class="form-group">
+            <label for="bank_name" class="required">Bank Name:</label>
+            <input type="text" id="bank_name" name="bank_name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="branch_name" class="required">Branch Name:</label>
+            <input type="text" id="branch_name" name="branch_name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="account_number" class="required">Account Number:</label>
+            <input type="text" id="branch_address" name="branch_address" required>
+        </div>
+
+        <!-- Account Type -->
+        <div class="form-group">
+            <label class="required">Account Type:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="account_type" value="checking" required> Checking</label>
+                <label><input type="radio" name="account_type" value="savings" required> Savings</label>
+                <label><input type="radio" name="account_type" value="salary" required> Salary</label>
+                <label><input type="radio" name="account_type" value="others" required> Others</label>
+            </div>
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="pincode" class="required">Pincode:</label>
+            <input type="text" id="pincode" name="pincode" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="country" class="required">Country:</label>
+            <select id="country" name="country" required>
+                <option value="" disabled selected>Select your country</option>
+                <option value="usa">United States</option>
+                <option value="canada">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="india">India</option>
+                <!-- Add more country options as needed -->
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="currency" class="required">Bank Account Currency:</label>
+            <select id="currency" name="currency" required>
+                <option value="" disabled selected>Select currency</option>
+                <option value="usd">USD - United States Dollar</option>
+                <option value="eur">EUR - Euro</option>
+                <option value="inr">INR - Indian Rupee</option>
+                <option value="gbp">GBP - British Pound</option>
+                <!-- Add more currency options as needed -->
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="ifsc_code" class="required">IFSC Code:</label>
+            <input type="text" id="ifsc_code" name="ifsc_code" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="account_holder_name" class="required">Bank Account Holder Name:</label>
+            <input type="text" id="account_holder_name" name="account_holder_name" required>
+        </div>
+        
+        <!-- Gender Selection -->
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <!-- Optionally, you can add more gender options if needed -->
+            </div>
+        </div>
+        
+        
+        
+        <!-- Terms and Conditions -->
+        <div class="form-group">
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="terms" required> I confirm that I have read, consent to, and agree to the <a href="/terms-and-conditions" target="_blank">terms and conditions</a>.</label>
+            </div>
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="submit-button">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
